@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">Antivirus Test app</string>
     <string name="scan">Scan</string>
+    <string name="press_back_again_to_exit">Press back again to exit</string>
+    <string name="scan_clicked">Scan Clicked</string>
+    <string name="scan_device_clicked">Scan Device Clicked</string>
+    <string name="check_for_viruses_clicked">Check for viruses Clicked</string>
+    <string name="sign">!</string>
+    <string name="problems">%1$s Problems</string>
+    <string name="device_scan">Device Scan</string>
+    <string name="show_you_all_info_about_phone">Show you all info about phone</string>
+    <string name="check_for_viruses">Check for Viruses</string>
+    <string name="check">Check</string>
+    <string name="dashboard">Dashboard</string>
 </resources>

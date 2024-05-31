@@ -14,6 +14,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.antivirus.testapp.R
 import com.antivirus.testapp.feature.core.presentation.ErrorScreen
 import com.antivirus.testapp.feature.core.presentation.LoadingScreen
 import com.antivirus.testapp.feature.home.data.UiData
@@ -53,21 +54,21 @@ fun HomeScreen(
                         scanClicked = {
                             Toast.makeText(
                                 context.applicationContext,
-                                "Scan Clicked",
+                                context.getString(R.string.scan_clicked),
                                 Toast.LENGTH_SHORT
                             ).show()
                         },
                         deviceScanClicked = {
                             Toast.makeText(
                                 context.applicationContext,
-                                "Scan Device Clicked",
+                                context.getString(R.string.scan_device_clicked),
                                 Toast.LENGTH_SHORT
                             ).show()
                         },
                         checkForVirusesClicked = {
                             Toast.makeText(
                                 context.applicationContext,
-                                "Check for viruses Clicked",
+                                context.getString(R.string.check_for_viruses_clicked),
                                 Toast.LENGTH_SHORT
                             ).show()
                         }

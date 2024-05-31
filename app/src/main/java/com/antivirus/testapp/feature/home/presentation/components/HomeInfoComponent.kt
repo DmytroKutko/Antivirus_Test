@@ -129,7 +129,7 @@ fun HomeInfoComponent(
                                         Text(
                                             modifier = Modifier
                                                 .fillMaxSize(),
-                                            text = "!",
+                                            text = stringResource(R.string.sign),
                                             color = Color.White,
                                             textAlign = TextAlign.Center
                                         )
@@ -138,13 +138,19 @@ fun HomeInfoComponent(
                                     Spacer(modifier = Modifier.size(4.dp))
 
                                     Text(
-                                        text = "${data.totalProblemsCount} Problems",
+                                        text = stringResource(
+                                            R.string.problems,
+                                            data.totalProblemsCount
+                                        ),
                                         color = Red,
                                         fontFamily = LatoRegular
                                     )
                                 } else {
                                     Text(
-                                        text = "${data.totalProblemsCount} Problems",
+                                        text = stringResource(
+                                            R.string.problems,
+                                            data.totalProblemsCount
+                                        ),
                                         fontFamily = LatoRegular
                                     )
                                 }
@@ -171,9 +177,9 @@ fun HomeInfoComponent(
 
                     OptionCard(
                         icon = R.drawable.ic_device,
-                        title = "Device Scan",
-                        description = "Show you all info about phone",
-                        buttonText = "Scan",
+                        title = stringResource(R.string.device_scan),
+                        description = stringResource(R.string.show_you_all_info_about_phone),
+                        buttonText = stringResource(R.string.scan),
                         buttonClicked = {
                             deviceScanClicked()
                         }
@@ -183,9 +189,9 @@ fun HomeInfoComponent(
 
                     OptionCard(
                         icon = R.drawable.ic_virus,
-                        title = "Check for Viruses",
-                        description = "Show you all info about phone",
-                        buttonText = "Check",
+                        title = stringResource(R.string.check_for_viruses),
+                        description = stringResource(R.string.show_you_all_info_about_phone),
+                        buttonText = stringResource(R.string.check),
                         buttonClicked = {
                             checkForVirusesClicked()
                         }

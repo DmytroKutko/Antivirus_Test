@@ -9,8 +9,10 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
+import com.antivirus.testapp.R
 import com.antivirus.testapp.feature.core.ui.theme.LatoBold
 import com.antivirus.testapp.feature.core.ui.theme.TextPrimary
 import com.antivirus.testapp.database.model.ComponentStatus
@@ -33,7 +35,7 @@ fun BottomSheetContent(status: List<ComponentStatus>) {
             Text(
                 modifier = Modifier
                     .fillMaxWidth(),
-                text = "Dashboard",
+                text = stringResource(R.string.dashboard),
                 fontSize = 24.sp,
                 fontFamily = LatoBold,
                 color = TextPrimary,
