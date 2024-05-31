@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Antivirus Test app</string>
+    <string name="scan">Scan</string>
+</resources>
