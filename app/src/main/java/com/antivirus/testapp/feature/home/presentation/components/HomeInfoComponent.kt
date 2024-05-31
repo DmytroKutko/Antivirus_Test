@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -52,7 +53,12 @@ fun HomeInfoComponent(
     BottomSheetScaffold(
         sheetPeekHeight = 240.dp,
         sheetContent = {
-            BottomSheetContent(data.status)
+            Box(
+                modifier = Modifier
+                    .heightIn(max = 640.dp)
+            ) {
+                BottomSheetContent(data.status)
+            }
         },
         containerColor = BottomSheetBackground,
     ) {
