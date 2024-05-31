@@ -37,7 +37,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideHeroRepository(issueDao: IssueDao): IssuesRepository = IssuesRepositoryImpl(dao = issueDao)
+    fun provideIssueRepository(issueDao: IssueDao): IssuesRepository = IssuesRepositoryImpl(dao = issueDao)
 
     @Provides
     @Singleton
