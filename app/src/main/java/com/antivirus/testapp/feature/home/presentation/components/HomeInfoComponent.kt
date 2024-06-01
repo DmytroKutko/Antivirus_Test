@@ -67,18 +67,15 @@ fun HomeInfoComponent(
                 .fillMaxSize()
                 .background(color = ContainerSecondary),
         ) {
-
-            LottieLoader(
-                modifier = Modifier
-                    .offset(y = (-232).dp)
-            )
-
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(top = 74.dp),
+                    .offset(y = (-262).dp),
                 contentAlignment = Alignment.Center
             ) {
+
+                LottieLoader(modifier = Modifier)
+
                 Card(
                     modifier = Modifier,
                     border = BorderStroke(
