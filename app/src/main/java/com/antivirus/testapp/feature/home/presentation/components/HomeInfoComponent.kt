@@ -60,7 +60,7 @@ fun HomeInfoComponent(
                 BottomSheetContent(data.status)
             }
         },
-        containerColor = BottomSheetBackground,
+        sheetContainerColor = BottomSheetBackground
     ) {
         Box(
             modifier = Modifier
