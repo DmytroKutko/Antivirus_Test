@@ -22,6 +22,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -45,7 +46,8 @@ fun OptionCard(
     Card(
         modifier = Modifier
             .height(213.dp)
-            .width(167.dp),
+            .width(167.dp)
+            .shadow(4.dp, shape = RoundedCornerShape(19.dp)),
         shape = RoundedCornerShape(19.dp),
         colors = CardDefaults.cardColors().copy(
             containerColor = Color.White
