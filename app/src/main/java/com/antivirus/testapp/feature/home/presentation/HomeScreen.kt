@@ -1,7 +1,12 @@
 package com.antivirus.testapp.feature.home.presentation
 
 import android.widget.Toast
-import androidx.compose.foundation.layout.Box
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.core.LinearEasing
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
@@ -17,7 +22,6 @@ import androidx.navigation.compose.rememberNavController
 import com.antivirus.testapp.R
 import com.antivirus.testapp.feature.core.presentation.ErrorScreen
 import com.antivirus.testapp.feature.core.presentation.LoadingScreen
-import com.antivirus.testapp.feature.home.data.UiData
 import com.antivirus.testapp.feature.home.presentation.components.HomeInfoComponent
 import com.antivirus.testapp.util.UiState
 
@@ -31,15 +35,31 @@ fun HomeScreen(
     val context = LocalContext.current
 
     Scaffold { paddingValues ->
-        Box(
+
+        AnimatedContent(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(top = paddingValues.calculateTopPadding()),
-        ) {
-            when (state) {
+            targetState = state,
+            label = "animatedContent",
+            transitionSpec = {
+                fadeIn(
+                    animationSpec = tween(
+                        300,
+                        easing = LinearEasing
+                    )
+                ) togetherWith fadeOut(
+                    animationSpec = tween(
+                        300,
+                        easing = LinearEasing
+                    )
+                )
+            }
+        ) { uiState ->
+            when (uiState) {
                 is UiState.Error -> {
-                    (state as UiState.Error).error.localizedMessage?.let {
-                        ErrorScreen(it)
+                    (state as UiState.Error).error.localizedMessage?.let { msg ->
+                        ErrorScreen(msg)
                     }
                 }
 
@@ -50,7 +70,7 @@ fun HomeScreen(
 
                 is UiState.Success -> {
                     HomeInfoComponent(
-                        data = (state as UiState.Success<UiData>).data,
+                        data = uiState.data,
                         scanClicked = {
                             Toast.makeText(
                                 context.applicationContext,
