@@ -60,7 +60,8 @@ fun HomeInfoComponent(
                 BottomSheetContent(data.status)
             }
         },
-        sheetContainerColor = BottomSheetBackground
+        sheetContainerColor = BottomSheetBackground,
+        sheetShadowElevation = 8.dp
     ) {
         Box(
             modifier = Modifier
